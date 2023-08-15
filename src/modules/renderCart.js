@@ -1,15 +1,11 @@
 const renderCart = (goods) => {
-    const goodsWrapper = document.querySelector('.cart-wrapper')
+    const cartWrapper = document.querySelector('.cart-wrapper')	
 
-	localStorage.setItem('goods', JSON.stringify(goods))
-
-    cartWrapper.innerHTML = ''
-
-    
+    cartWrapper.innerHTML = ''    
 
     goods.forEach((goodItem) => {
         cartWrapper.insertAdjacentHTML('beforeend', `
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            
                 <div class="card" data-key="${goodItem.id}">
 					${goodItem.sale ? '<div class="card-sale">🔥Hot Sale🔥</div>' : ''}
 						<div class="card-img-wrapper">
@@ -22,7 +18,7 @@ const renderCart = (goods) => {
 							    <button class="btn btn-primary">В корзину</button>
 						    </div>
 					    </div>
-			    </div>
+			   
         `)
     });
 }
